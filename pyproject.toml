@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eda-mcp"
+version = "0.1.0"
+description = "A safe, modular EDA MCP server"
+requires-python = ">=3.11"
+dependencies = ["fastmcp>=4.1,<5", "pydantic>=2.7"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+asyncio_mode = "auto"
